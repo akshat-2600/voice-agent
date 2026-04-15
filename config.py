@@ -23,7 +23,7 @@ GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
 
 # LLM
 # Options: "gemini" | "openai" | "groq" | "ollama"
-LLM_BACKEND: str = os.getenv("LLM_BACKEND", "openrouter")
+LLM_BACKEND: str = os.getenv("LLM_BACKEND", "ollama")
 
 # Gemini (Google AI Studio)
 GOOGLE_API_KEY: str = os.getenv("GOOGLE_API_KEY", "")
