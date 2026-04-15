@@ -1,0 +1,175 @@
+/* Base */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;600;800&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #0a0a0f;
+    color: #e2e8f0;
+}
+
+/* Header */
+.agent-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 24px 0 10px;
+}
+.agent-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #38bdf8, #818cf8, #e879f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+.agent-subtitle {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin: 0;
+    letter-spacing: 0.1em;
+}
+
+/* Pipeline cards */
+.pipeline-card {
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    position: relative;
+}
+.pipeline-card.success { border-left: 3px solid #34d399; }
+.pipeline-card.error   { border-left: 3px solid #f87171; }
+.pipeline-card.neutral { border-left: 3px solid #60a5fa; }
+.pipeline-card.warning { border-left: 3px solid #fbbf24; }
+
+.card-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+.card-content {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    word-break: break-word;
+}
+.card-content pre {
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 12px;
+    overflow-x: auto;
+    font-size: 0.8rem;
+    border: 1px solid #1e293b;
+}
+
+/* Intent badges */
+.intent-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+}
+.badge-write_code  { background:#1d4ed8; color:#bfdbfe; }
+.badge-create_file { background:#065f46; color:#6ee7b7; }
+.badge-summarize   { background:#7c3aed; color:#ddd6fe; }
+.badge-chat        { background:#374151; color:#d1d5db; }
+.badge-unknown     { background:#7f1d1d; color:#fca5a5; }
+
+/* Output box */
+.output-box {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Error box */
+.error-box {
+    background: #450a0a;
+    border: 1px solid #dc2626;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #fca5a5;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Sidebar  */
+[data-testid="stSidebar"] {
+    background: #090d14;
+    border-right: 1px solid #1e293b;
+}
+
+/* Buttons */
+.stButton > button {
+    background: linear-gradient(135deg, #1e40af, #4f46e5) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.03em !important;
+    padding: 10px 20px !important;
+    transition: all 0.2s !important;
+}
+.stButton > button:hover { opacity: 0.85 !important; }
+
+/* Confirmation buttons */
+button[key="confirm_intent"],
+.stButton:has(button:contains("Confirm & Execute")) > button {
+    background: linear-gradient(135deg, #059669, #34d399) !important;
+    padding: 12px 24px !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+}
+.stButton:has(button:contains("Confirm & Execute")) > button:hover {
+    opacity: 0.9 !important;
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4) !important;
+}
+
+button[key="cancel_intent"],
+.stButton:has(button:contains("Cancel")) > button:last-of-type {
+    background: linear-gradient(135deg, #dc2626, #ef4444) !important;
+    padding: 12px 24px !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+}
+.stButton:has(button:contains("Cancel")) > button:last-of-type:hover {
+    opacity: 0.9 !important;
+}
+
+/* History table */
+.history-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 100px 80px;
+    gap: 8px;
+    padding: 8px 10px;
+    border-bottom: 1px solid #1e293b;
+    font-size: 0.75rem;
+    align-items: start;
+}
+.history-row:hover { background: #111827; }
+.ts { color: #475569; }
+.ok  { color: #34d399; }
+.fail { color: #f87171; }
+
+/* Dividers */
+hr { border-color: #1e293b !important; }

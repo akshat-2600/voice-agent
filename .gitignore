@@ -1,0 +1,14 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+output/*
+!output/.gitkeep
+.streamlit/
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+test_pipeline.py
